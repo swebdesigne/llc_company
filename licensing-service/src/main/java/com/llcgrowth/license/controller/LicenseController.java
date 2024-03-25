@@ -3,9 +3,10 @@ package com.llcgrowth.license.controller;
 import com.llcgrowth.license.model.License;
 import com.llcgrowth.license.service.LicenseService;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Locale;
 
 @AllArgsConstructor
 @RestController
@@ -32,9 +33,10 @@ public class LicenseController {
 	@PostMapping
 	public ResponseEntity<String> createLicense(
 			@PathVariable("organisationId") String organisationId,
-			@RequestBody License license
+			@RequestBody License license,
+			@RequestHeader(value = "Accept-Language", required = false) Locale locale
 	) {
-		return ResponseEntity.ok(licenseService.createLicense(license, organisationId));
+		return ResponseEntity.ok(licenseService.createLicense(license, organisationId, locale));
 	}
 
 	@DeleteMapping(value = "/{licenseId}")
