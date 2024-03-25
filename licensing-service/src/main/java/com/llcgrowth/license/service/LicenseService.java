@@ -13,11 +13,11 @@ public class LicenseService {
 	@Autowired
 	MessageSource messages;
 
-	public License getLicense(String licenseId, String organisationId) {
+	public License getLicense(String licenseId, String organizationId) {
 		return License.builder()
 				.id(new Random().nextInt(1000))
 				.licenseId(licenseId)
-				.organisationId(organisationId)
+				.organisationId(organizationId)
 				.description("Software product")
 				.productName("Ostock")
 				.licenseType("full")
