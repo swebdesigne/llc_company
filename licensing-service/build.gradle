@@ -35,6 +35,10 @@ dependencies {
 
     implementation 'org.springframework.boot:spring-boot-starter-hateoas'
 
+
+    // https://mvnrepository.com/artifact/com.spotify/docker-client
+    implementation 'com.spotify:docker-client:8.16.0'
+
 }
 
 java {
